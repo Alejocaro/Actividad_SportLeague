@@ -24,6 +24,7 @@ namespace SportsLeague.DataAccess.Repositories
             return await _dbSet
                 .Where(g => g.MatchId == matchId)
                 .Include(g => g.Player)
+                    .ThenInclude(p => p.Team)
                 .OrderBy(g => g.Minute)
                 .ToListAsync();
         }
