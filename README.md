@@ -339,6 +339,9 @@ dotnet ef migrations add NombreMigracion \
 | POST/GET | `/api/match/{matchId}/cards` | Registrar / listar tarjetas |
 | DELETE | `/api/match/{matchId}/cards/{cardId}` | Eliminar tarjeta |
 | POST/GET | `/api/match/{matchId}/result` | Registrar / consultar resultado |
+| POST/GET | `/api/match/{matchId}/lineup` | Registrar / listar alineación |
+| GET | `/api/match/{matchId}/lineup/team/{teamId}` | Alineación por equipo |
+| DELETE | `/api/match/{matchId}/lineup/{id}` | Eliminar jugador de alineación |
 
 ### Estadísticas (solo lectura)
 
@@ -379,6 +382,7 @@ dotnet ef migrations add NombreMigracion \
 | 5 | Resultados, goles y tarjetas |
 | 5.1 | DataSeeder Liga BetPlay |
 | 6 | Standings y estadísticas |
+| 7 | Alineaciones de partido (MatchLineup) |
 
 ## Licencia
 

@@ -80,6 +80,17 @@ namespace SportsLeague.API.Mappings
                     dest => dest.PlayerName,
                     opt => opt.MapFrom(src =>
                         src.Player.FirstName + " " + src.Player.LastName));
+
+            // MatchLineup mappings
+            CreateMap<CreateMatchLineupDTO, MatchLineup>();
+            CreateMap<MatchLineup, MatchLineupDTO>()
+                .ForMember(
+                    dest => dest.PlayerName,
+                    opt => opt.MapFrom(src =>
+                        src.Player.FirstName + " " + src.Player.LastName))
+                .ForMember(
+                    dest => dest.TeamName,
+                    opt => opt.MapFrom(src => src.Player.Team.Name));
         }
     }
 }
